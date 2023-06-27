@@ -1,0 +1,95 @@
+@BaseClass = Global
+[
+	globalname(string) : "Global Entity Name"
+]
+
+@PointClass base(Targetname, Angles, RenderFields) studio() = env_model_coop : "New alternative to cyclers" 
+[
+	model(studio) : "Model name"
+	skin(integer) : "Skin"  : 0
+	body(integer) : "Body"  : 0
+	scale(string) : "Scale" : 0
+	minhullsize(string) : "Custom Min Hull Size (X Y Z)" : "-10 -10 -10"
+	maxhullsize(string) : "Custom Max Hull Size (X Y Z)" : "10 10 10"
+
+	m_iszSequence_On(string) : "Sequence when on"
+	m_iAction_On(choices) : "Behaviour when on" : 0 =
+	[
+		0: "Freeze when sequence ends"
+		1: "Loop"
+		2: "Change state when sequence ends"
+	]
+
+	m_iszSequence_Off(string) : "Sequence when off"
+	m_iAction_Off(choices) : "Behaviour when off" : 0 =
+	[
+		0: "Freeze when sequence ends"
+		1: "Loop"
+		2: "Change state when sequence ends"
+	]
+
+	spawnflags(flags) =
+	[
+		1: "Initially Off" : 0
+		2: "Drop to Floor" : 0
+		4: "Solid" : 0
+	]
+]
+
+@PointClass base(Targetname, Target, RenderFields,Global) color(130 180 30) = env_render_progressive : "Render Controls gradually"
+[
+	spawnflags(flags) =
+	[
+		1 : "Remove after trigger" : 0
+		2 : "Change solid" : 0
+		4 : "Render solid on end" : 0
+	]
+
+	speed(integer): "Rendering time" : 5
+	health(integer): "Change solid render value" : 1
+]
+
+@PointClass base(Targetname) iconsprite("sprites/env.spr") = env_warpball : "Teleport-in effect"
+[
+ 	health(string) : "Max lightning-arc length" : "90"
+	frags(integer) : "Number of lightning bolts" : 12
+]
+
+@PointClass base(Targetname, Angles, RenderFields,Global) color(130 180 30) = game_spritetext : "Sprites forming a text"
+[
+	Target(string)	: "Copypointer" : "!self" 
+	dmg(string)		: "Copypointer mode refresh rate" : 1
+	message(string) : "Message Text english"
+	message_spanish(string) : "Message Text spanish"
+	holdtime(string): "text hold time" : 4
+	scale(string): "scale" : 1
+	model(string): "sprite file to use" : "sprites/gst/spritefont1.spr"
+	netname(string): "extra sprite file to use" : "sprites/gst/extra.spr"
+	frags(integer): "character distance" : 16
+	offset(string): "origin offset" : "0 0 80"
+	angleoffset(string): "angles offset"
+	rendermode(integer): "Render Mode" : 5
+	renderamt(integer): "Render Amount" : 255
+	health(choices) : "extra mode" : 0 =
+	[
+		0 : "none"
+		1 : "talk bubble"
+		2 : "anger bubble"
+		3 : "think bubble"
+		4 : "mute bubble"
+	]
+	armorvalue(choices) : "interaction mode" : 0 =
+	[
+		0 : "just text"
+		1 : "text with options"
+		2 : "trigger button"
+	]
+	optiontarget1(string): "Option1 target"
+	optiontarget2(string): "Option2 target" 
+	optiontarget3(string): "Option3 target" 
+	optiontarget4(string): "Option4 target" 
+	optionmessage1(string): "Option1 text"
+	optionmessage2(string): "Option2 text"
+	optionmessage3(string): "Option3 text"
+	optionmessage4(string): "Option4 text"
+]
