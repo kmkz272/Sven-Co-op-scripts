@@ -1,21 +1,6 @@
-/* data_global: alternative to env_global.
+/* data_savestate
 Author: kmkz (e-mail: al_basualdo@hotmail.com )
-this entity loads its state value from a file and that can be used to be passed across diferents maps.
----------------------------------------
-targetname: "entity name"
-Name of the entity. When triggered will switch on or off. 
-netname: "global label"
-this label tells how it will be stored on the file. For now this need to be prefixed with global and add a
-3 digit number that will differenciate it from other global vars. Example valid labels: global004,global523,global097.
-if the label is named !reset it will initialize all the states to off.
-health: "global state"
-this will store the state (on/off) of the entity. 0 means off and 1 means on. You will need something
-like a trigger_condition to compare with the data_global.
----------------------------------------
-flags:
-none
----------------------------------------
-note: if the sequence name is !none then no sequence will be played and the entity will stay frozen.
+
 */
 
 #include "data_global"
