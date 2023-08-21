@@ -4,6 +4,7 @@ bool debug_mode;
 float Q_PI = 3.14159265358979323846;
 
 int iLanguage;
+bool ChangeLevelSpriteAllow;
 bool SaveAllowed ;
 bool LoadAllowed ;
 bool SaveVoteAlowed ;
@@ -41,6 +42,30 @@ enum EnumLanguage
 		}
 		
 		return intext;
+	}
+	
+	bool CheckUniqueTargetname (CBaseEntity@ CheckEntity)
+	{
+		if ( string(CheckEntity.pev.targetname) == "" ) {return false;}
+	
+		bool bcheck = true;
+		string oldname = CheckEntity.pev.targetname;
+		CBaseEntity@ FoundEntity = g_EntityFuncs.FindEntityByTargetname( @FoundEntity, CheckEntity.pev.targetname);
+		CheckEntity.pev.targetname = string(CheckEntity.pev.targetname) +"_CheckUnique";
+		CheckEntity.pev.targetname = FoundEntity.pev.targetname;
+				
+		if (@FoundEntity == null)
+		{
+			bcheck = true;
+		}
+		else
+		{
+			bcheck = false;
+		}
+		
+		CheckEntity.pev.targetname = oldname;
+		
+		return bcheck;
 	}
 
 

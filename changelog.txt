@@ -1,0 +1,43 @@
+Changelog:
+
+v1.2
+21/8/23
+added data_global, data_savestate and data_loadstate entities.
+fixed game_spritetext errors when the text is modified in game.
+
+v1.1.4
+27/3/23
+removed settings file: merged to with kmkz_entity_main file to avoid issues. 
+made changes in extra_languages class to avoid conflicts with Mikk scripts.
+
+v1.1.3
+29/1/23
+game_spritetext: 
+adjusted english/spanish languages support.
+fixed buttons being created at wrong times.
+fixed options mode failing when 2 or more entities with options are active.
+
+v1.1.2
+11/12/22
+optimized env_render_progresive.
+
+v1.1.1
+27/11/22
+fixed env_model_coop reseting animations when it is not rendered.
+
+v1.1
+22/11/22
+from now this will a entity pack and not an individual entity anymore.
+game_spritetext: fixed problems with the offset and angleoffset keyvalues.
+added env_model_coop.
+added env_render_progressive.
+added env_warp_ball.
+added changelog and entities description files.
+added .fgd file.
+
+v1.0.1:
+fixed an inconsistency of holdtime key, this does not affect the entity anyway.
+added credits file.
+moved the entity description from the script files right here.
+
+v1.0: initial release
