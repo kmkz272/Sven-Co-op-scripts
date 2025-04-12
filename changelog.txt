@@ -1,5 +1,11 @@
 Changelog:
 
+v1.3
+12/4/2025
+replaced "data" named entities with func" with some code inprovenments.
+game spritetext: Expanded max options from 4 to 16, added text alignment, added trigger entity after holdtime.
+removed extra_languages.
+
 v1.2
 21/8/23
 added data_global, data_savestate and data_loadstate entities.
