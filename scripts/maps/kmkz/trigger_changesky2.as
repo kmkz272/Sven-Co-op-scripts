@@ -1,3 +1,5 @@
+//script taken from contra maps.
+
 /*
     Message_Begin_Intercept(2,gmsgChangeSky,(float *)g_vecZero,(edict_s *)0x0);
     (*g_engfuncs._184_4_)(2,iVar7,g_vecZero,0);
@@ -72,3 +74,4 @@ class CChangeSky : ScriptBaseEntity{
         }
     }
 }
+
