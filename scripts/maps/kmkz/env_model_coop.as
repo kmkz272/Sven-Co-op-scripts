@@ -246,7 +246,11 @@ class CEnvModelCoop : ScriptBaseAnimating
 	}	
 }
 
-void RegisterEnvModelCoop()
+bool gRegisterEnvModelCoop = RegisterEnvModelCoop();
+
+bool RegisterEnvModelCoop()
 {
-	g_CustomEntityFuncs.RegisterCustomEntity("CEnvModelCoop", "env_model_coop");
+	if( !g_CustomEntityFuncs.IsCustomEntity( "env_model_coop" ) )
+		g_CustomEntityFuncs.RegisterCustomEntity("CEnvModelCoop", "env_model_coop");
+    return true;
 }

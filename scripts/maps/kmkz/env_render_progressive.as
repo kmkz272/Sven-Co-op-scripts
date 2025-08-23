@@ -170,9 +170,13 @@ namespace EnvRenderProgressive
 	{
 		pEntity.pev.rendermode = 4;
 	}
-	
-	void Register() 
+
+	bool gRegister = Register();
+
+	bool Register()
 	{
-		g_CustomEntityFuncs.RegisterCustomEntity( "EnvRenderProgressive::env_render_progressive", "env_render_progressive" );
+		if( !g_CustomEntityFuncs.IsCustomEntity( "env_render_progressive" ) )
+			g_CustomEntityFuncs.RegisterCustomEntity("EnvRenderProgressive::env_render_progressive", "env_render_progressive");
+		return true;
 	}
 }

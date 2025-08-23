@@ -179,8 +179,12 @@ namespace GameTextCustom
 		}
 	}
 	
-	void Register()
+	bool gRegister = Register();
+
+	bool Register()
 	{
-		g_CustomEntityFuncs.RegisterCustomEntity( "GameTextCustom::game_text_custom", "game_text_custom" );
+		if( !g_CustomEntityFuncs.IsCustomEntity( "game_text_custom" ) )
+			g_CustomEntityFuncs.RegisterCustomEntity("GameTextCustom::game_text_custom", "game_text_custom");
+		return true;
 	}
 }

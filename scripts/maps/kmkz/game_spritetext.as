@@ -728,9 +728,11 @@ This entity creates a sprite message
 		if (@sprite != null){sprite.SUB_Remove();}
 	}
 	
-	void RegisterGameSpriteText()
+	bool gRegisterGameSpriteText = RegisterGameSpriteText();
+
+	bool RegisterGameSpriteText()
 	{
-		g_CustomEntityFuncs.RegisterCustomEntity( "game_spritetext", "game_spritetext" );
+		if( !g_CustomEntityFuncs.IsCustomEntity( "game_spritetext" ) )
+			g_CustomEntityFuncs.RegisterCustomEntity("game_spritetext", "game_spritetext");
+		return true;
 	}
-
-

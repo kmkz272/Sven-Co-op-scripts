@@ -470,7 +470,11 @@ void DestroyFile(string filename)
 	}
 }
 
-void RegisterFuncLoadstate()
+bool gRegisterFuncLoadstate = RegisterFuncLoadstate();
+
+bool RegisterFuncLoadstate()
 {
-	g_CustomEntityFuncs.RegisterCustomEntity("CFuncLoadstate", "func_loadstate");
+	if( !g_CustomEntityFuncs.IsCustomEntity( "func_loadstate" ) )
+		g_CustomEntityFuncs.RegisterCustomEntity("CFuncLoadstate", "env_model_func_loadstatecoop");
+    return true;
 }

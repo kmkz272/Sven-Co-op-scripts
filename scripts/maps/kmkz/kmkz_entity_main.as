@@ -38,10 +38,5 @@ void MapInit()
 	RegisterDataSavestate();
 	RegisterDataLoadstate();
 	RegisterDataGlobal();
-	RegisterEnvModelCoop();
-	GameSpritetext::Register();
-	RegisterGameSpriteTextButton();
-	EnvRenderProgressive::Register();
-	RegisterEnvWarpball();
 	LoadSettings();
 }
