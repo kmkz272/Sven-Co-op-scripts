@@ -86,17 +86,21 @@ class CEnvWarpball : ScriptBaseEntity
 }
 
 void BeamRemove(CBeam @pBeam)
-	{
-		g_EntityFuncs.Remove( pBeam );
-	}
+{
+	g_EntityFuncs.Remove( pBeam );
+}
 	
 void WarpballThink(CBaseEntity @pEntity)
-	{
-		g_SoundSystem.EmitSound( pEntity.edict(), CHAN_ITEM, "debris/beamstart7.wav", 1, ATTN_NORM );
-		pEntity.SUB_UseTargets( @pEntity, USE_TOGGLE, 0);
-	}
-
-void RegisterEnvWarpball()
 {
-	g_CustomEntityFuncs.RegisterCustomEntity("CEnvWarpball", "env_warpball");
+	g_SoundSystem.EmitSound( pEntity.edict(), CHAN_ITEM, "debris/beamstart7.wav", 1, ATTN_NORM );
+	pEntity.SUB_UseTargets( @pEntity, USE_TOGGLE, 0);
+}
+
+bool gRegisterEnvWarpball = RegisterEnvWarpball();
+
+bool RegisterEnvWarpball()
+{
+	if( !g_CustomEntityFuncs.IsCustomEntity( "env_warpball" ) )
+		g_CustomEntityFuncs.RegisterCustomEntity("CEnvWarpball", "env_warpball");
+    return true;
 }

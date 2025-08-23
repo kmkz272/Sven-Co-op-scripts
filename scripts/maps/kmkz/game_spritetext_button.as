@@ -51,7 +51,11 @@ class CGameSpriteTextButton: ScriptBaseAnimating
 	}
 }
 
-void RegisterGameSpriteTextButton()
+bool gRegisterGameSpriteTextButton = RegisterGameSpriteTextButton();
+
+bool RegisterGameSpriteTextButton()
 {
-	g_CustomEntityFuncs.RegisterCustomEntity("CGameSpriteTextButton", "game_spritetext_button");
+	if( !g_CustomEntityFuncs.IsCustomEntity( "game_spritetext_button" ) )
+		g_CustomEntityFuncs.RegisterCustomEntity("CGameSpriteTextButton", "game_spritetext_button");
+    return true;
 }

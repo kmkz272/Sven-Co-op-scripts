@@ -199,7 +199,11 @@ void FuncGlobalReadFromFileToArray(string filename)
 	}
 }
 
-void RegisterFuncGlobal()
+bool gRegisterFuncGlobal = RegisterFuncGlobal();
+
+bool RegisterFuncGlobal()
 {
-	g_CustomEntityFuncs.RegisterCustomEntity("CFuncGlobal", "func_global");
+	if( !g_CustomEntityFuncs.IsCustomEntity( "func_global" ) )
+		g_CustomEntityFuncs.RegisterCustomEntity("CFuncGlobal", "func_global");
+    return true;
 }

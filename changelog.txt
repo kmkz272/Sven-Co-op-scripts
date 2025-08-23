@@ -1,5 +1,9 @@
 Changelog:
 
+v1.3.1
+23/8/2025
+Added automatic custom entity registration for easy usage for mappers by just including the desired script.
+
 v1.3
 12/4/2025
 replaced "data" named entities with func" with some code inprovenments.
