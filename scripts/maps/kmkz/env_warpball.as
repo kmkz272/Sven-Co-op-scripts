@@ -1,4 +1,4 @@
-// Credits: kmkz, code taken from HL code. optimizations contributed by AK47toh and Mikk.
+// Credits: kmkz
 
 namespace EnvWarpball
 {
@@ -145,11 +145,19 @@ void KillBeam( CBeam @pBeam )
 	g_EntityFuncs.Remove( pBeam );
 }
 
+void Register()
+{
+	g_CustomEntityFuncs.RegisterCustomEntity("EnvWarpball::env_warpball", "env_warpball");
+}
+} // END of namespace
+
+
 bool gRegisterEnvWarpball = RegisterEnvWarpball();
 
 bool RegisterEnvWarpball()
+
 {
 	if( !g_CustomEntityFuncs.IsCustomEntity( "env_warpball" ) )
-		g_CustomEntityFuncs.RegisterCustomEntity("CEnvWarpball", "env_warpball");
+		g_CustomEntityFuncs.RegisterCustomEntity("EnvWarpball::env_warpball", "env_warpball");
     return true;
 }
